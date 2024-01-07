@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <title>臺灣史前動物特展</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap4-modal-fullscreen.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preload" href="img/g3Q1.png" as="image" />
+    <link rel="preload" href="img/g3Q2.png" as="image" />
+    <link rel="preload" href="img/g3Q3.png" as="image" />
+    <link rel="preload" href="img/g3Q4.png" as="image" />
+    <style>
+        #preloader {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.8);
+            background-image: url("img/MnyxU.gif");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+    <script src="js/jquery-3.6.1.slim.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/func.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/pagefunc.js"></script>
+    <script>
+        var imgQuestion = ['img/g3Q1.png', 'img/g3Q2.png', 'img/g3Q3.png'];
+        var titleQuestion = ['掌蹠骨', '鹿股骨', '梅花鹿皮'];
+        var txtQuestion = ['動物的骨骼經過了加工、修整後，除了作為裝飾品外，更可以做為日常工具使用。',
+            '從骨頭上的切割痕，可得知史前人類在動物身上獲取食物。',
+            '人類與其他哺乳類動物相比，毛髮稀疏，因此動物的皮毛就提供了保暖所需。']
+
+        $(function () {
+            var count = 0;
+            var loader = document.getElementById("preloader");
+
+            window.addEventListener("load", function () {
+                setTimeout(function () {
+                    loader.style.display = "none";
+                }, 1500);
+            });
+            clearPic();
+            var audioCorrect = document.getElementById("audioCorrect");
+            var audioWrong = document.getElementById("audioWrong");
+            $('.gItem2').click(function () {
+                let num = $(this).index();
+                let item = $('.gAns img')[num];
+                let title = $('.gItem2 p')[num];
+                if (num != 3) {
+                    audioCorrect.volume = 0.1;
+                    audioCorrect.play();
+                    $('#box1').hide();
+                    $('#titleDisplay').text(titleQuestion[num]);
+                    $('#imgDisplay').attr('src', imgQuestion[num]);
+                    $('#txtDisplay').text(txtQuestion[num]);
+                    $('#box2').show();
+                    $(item).attr('src', 'img/gAnso.png');
+                    $(item).show();
+                    $(title).show();
+                    count++;
+                    if (count >= 3) {
+                        setTimeout("location.href = 'game3ok.html'", 3000);
+                    }
+                }
+                else {
+                    audioWrong.volume = 0.1;
+                    audioWrong.play();
+                    $(item).attr('src', 'img/gAnsx.png');
+                    $(item).show();
+                    $(title).show();
+                }
+
+            });
+        });
+        function clearPic() {
+            $('.gAns img, .gItem2 p').each(function () {
+                $(this).hide();
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <audio id="audioCorrect">
+        <source src="audio/correct.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="audioWrong">
+        <source src="audio/wrong.mp3" type="audio/mpeg" />
+    </audio>
+    <main class="home box2">
+        <div id="content" class="game3">
+            <div class="gInfo">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#hamMenu">
+                    <img src="img/info.png" alt="" />
+                </a>
+            </div>
+
+            <div class="gameContent">
+                <div class="gTitle"><img src="img/gTitle03.png" alt="" /></div>
+                <div class="row gMain2" id="box1" style="height:30%;">
+                    <div class="col-12">
+                        <p class="gTxt3">想在大自然生存不是件容易的事，人類透過獵捕動物獲得主要的食物來源，除此之外，動物的全身都富有經濟價值。請選出動物身上來還有哪些部分可再利用喔!</p>
+                    </div>
+                </div>
+                <div class="row gMain2" id="box2" style="display:none;">
+                    <div class="col-4 gQuest2">
+                        <img id="imgDisplay" src="img/g3Q3.png" alt="" />
+                    </div>
+                    <div class="col-8">
+                        <h3 class="game3h3"><span id="titleDisplay">掌蹠骨</span></h3>
+                        <p id="txtDisplay" class="gTxt2">
+                            動物的骨骼經過了加工、修整後，除了作為裝飾品外，更可以做為日常工具使用。
+                        </p>
+                    </div>
+                </div>
+                <div class="gFlex">
+                    <div class="gItem2">
+                        <div class="gAns"><img src="img/gAnso.png" alt="" /></div>
+                        <div class="gItemimg"><img src="img/g3Ans1.png" alt="" /></div>
+                        <p>骨器(鹿科掌蹠骨)</p>
+                    </div>
+                    <div class="gItem2">
+                        <div class="gAns"><img src="img/gAnsx.png" alt="" /></div>
+                        <div class="gItemimg"><img src="img/g3Ans2.png" alt="" /></div>
+                        <p>鹿股骨</p>
+                    </div>
+                    <div class="gItem2">
+                        <div class="gAns"><img src="img/gAnsx.png" alt="" /></div>
+                        <div class="gItemimg"><img src="img/g3Ans3.png" alt="" /></div>
+                        <p>梅花鹿皮</p>
+                    </div>
+                    <div class="gItem2">
+                        <div class="gAns"><img src="img/gAnsx.png" alt="" /></div>
+                        <div class="gItemimg"><img src="img/g3Ans4.png" alt="" /></div>
+                        <p>犬右下顎</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade"
+         id="hamMenu"
+         tabindex="-1"
+         aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" style="max-width: 70%">
+            <div class="myModal modal-content">
+                <div class="modal-header">
+                    <h3>遊戲說明</h3>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body bodyinfo">
+                    <div class="bodyInfo" data-mcs-theme="dark">
+                        <p>
+                            臺灣過去有許多動物種類雖然已經看不到了，但是考古學家及生物學家透過地層裡的化石，就可以認識這些臺灣古代先民。
+                        </p>
+                        <p>
+                            動物們不僅提供史前人類生存的資源，也型塑了人類的精神文化，讓我們一起勇闖臺灣島，看看你對臺灣史前動物的認識有多少吧!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

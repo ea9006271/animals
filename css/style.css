@@ -1,0 +1,949 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: #C2D88B;
+    font-family: 'Noto Sans TC', "微軟正黑體", "Microsoft JhengHei", "Segoe UI Semibold", "Segoe UI", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+/* Box styles */
+
+.box {
+    width: 100vw;
+    height: 100vh;
+    background: #62d0fe;
+    height: calc(var(--vh, 1vh) * 100);
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /*水平置中*/
+    align-items: center;
+    /*垂直置中*/
+}
+
+.box2 {
+    width: 100vw;
+    height: 100vh;
+    background: #C2D88B;
+    height: calc(var(--vh, 1vh) * 100);
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /*水平置中*/
+    align-items: center;
+    /*垂直置中*/
+}
+
+.box3 {
+    width: 100vw;
+    height: 100vh;
+    background: #1b202a;
+    height: calc(var(--vh, 1vh) * 100);
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /*水平置中*/
+    align-items: center;
+    /*垂直置中*/
+}
+
+.box:after {
+    padding-top: 56.28%;
+    /*1:2 ratio*/
+    display: block;
+    content: "";
+}
+/* 
+.phoneH {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../img/gameBgH.png);
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    box-sizing: content-box;
+} */
+
+
+/* Style that should be applied to the box content */
+
+.info {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../img/indexBg.png);
+    background-size: cover;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.info2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../img/indexBg2.png);
+    background-size: cover;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.game1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../img/gameBg1.png);
+    background-size: cover;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.game2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../img/gameBg2.png);
+    background-size: cover;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.game3 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../img/gameBg3.png);
+    background-size: cover;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.game4 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../img/gameBg4.png);
+    /* background-size: auto 100%; */
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.gameok {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../img/gFinish.png);
+    background-size: cover;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.gameok1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../img/gFinish2.png);
+    background-size: cover;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.gameok2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../img/gFinish3.png);
+    background-size: cover;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.gameok3 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../img/gFinish4.png);
+    background-size: cover;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.gameok4 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../img/gFinish5.png);
+    background-size: cover;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.gMain {
+    background: rgba(255, 255, 255, .6);
+    border-radius: 30px;
+    --bs-gutter-x: 0rem;
+    margin-top: 10px;
+}
+
+.gMain2 {
+    --bs-gutter-x: 0rem;
+    margin-top: 10px;
+}
+
+.gQuest {
+    background: #fff;
+    text-align: center;
+    border-radius: 0 30px 30px 0;
+}
+
+.gQuest2 {
+    background: #fff;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.gQuest img,
+.gQuest2 img {
+    width: 80%;
+}
+
+.game3h3 {
+    font-size: 3.2rem;
+    color: #fff;
+    padding: 1rem 2rem;
+    line-height: 3.6rem;
+}
+
+.game3h3 span {
+    background: #000;
+    padding: 5px 25px 12px 25px;
+    border-radius: 20px;
+}
+
+.gTxt {
+    font-size: 1.2rem;
+    text-indent: 2.4rem;
+    font-weight: bold;
+    padding: 1rem 1rem;
+    line-height: 2rem;
+    margin-bottom: 0rem;
+}
+
+.gTxt2 {
+    font-size: 1.8rem;
+    text-indent: 3.6rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    line-height: 3rem;
+    margin-bottom: 0rem;
+}
+
+.gTxt3 {
+    font-size: 1.8rem;
+    text-indent: 3.6rem;
+    font-weight: bold;
+    padding: 1rem 2.5rem 1rem 4rem;
+    line-height: 3rem;
+    margin-bottom: 0rem;
+}
+
+.indexContent {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.gameContent {
+    width: 100%;
+    height: 100%;
+    padding: 8% 8%;
+    margin: 0 auto;
+}
+
+.gInfo {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    top: 15px;
+    left: 15px;
+    z-index: 9999;
+}
+
+.gInfo img {
+    width: 100%;
+}
+
+.gInfo2 {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    left: 30%;
+    bottom: 3%;
+    z-index: 9999;
+}
+
+.gInfo2 img {
+    width: 40%;
+}
+
+.gStart {
+    width: 100%;
+    height: 75%;
+    display: block;
+    margin-top: 10%;
+    background-image: url(../img/gStart.png);
+    background-size: 85%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gStart:hover {
+    background-image: url(../img/gStart_over.png);
+}
+
+.gStart2 {
+    width: 100%;
+    height: 75%;
+    display: block;
+    margin-top: 8%;
+    text-align: center;
+}
+
+.gStart3 {
+    width: 100%;
+    height: 75%;
+    display: block;
+    margin-top: 4%;
+    text-align: center;
+}
+
+.gStart2 img {
+    width: 80%;
+}
+
+.gStart3 img {
+    width: 80%;
+}
+
+.gTitle {
+    text-align: center;
+}
+
+.gTitle img {
+    width: 80%;
+}
+
+.gFlex {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0 0 0;
+}
+
+.gItem {
+    width: 20%;
+    background-color: #fff;
+    position: relative;
+    border: 0;
+    text-align: center;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.gItem2 {
+    width: 25%;
+    background-color: #fff;
+    position: relative;
+    border: 0;
+    text-align: center;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.gItemimg img,
+.gItemimg2 img {
+    width: 100%;
+}
+
+.gItem p,
+.gItem2 p {
+    font-size: .9rem;
+    line-height: 1.5rem;
+    background: #000;
+    color: #fff;
+    border-radius: 12px;
+    margin: 0 5px 5px 5px;
+}
+
+.gAns {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.gAns img {
+    width: 100%;
+}
+
+.modal-content {
+    background: #fff;
+}
+
+.aMask1 {
+    position: absolute;
+    width: 3%;
+    height: 5%;
+    display: block;
+    background: rgba(0, 0, 0, .3);
+    border-radius: 50%;
+    bottom: 18%;
+    left: 12%;
+    z-index: 99;
+}
+
+.aMask2 {
+    position: absolute;
+    width: 10%;
+    height: 14%;
+    display: block;
+    background: rgba(0, 0, 0, .3);
+    border-radius: 50%;
+    top: 60%;
+    left: 14%;
+}
+
+.aMask3 {
+    position: absolute;
+    width: 6%;
+    height: 10%;
+    display: block;
+    background: rgba(0, 0, 0, .3);
+    border-radius: 50%;
+    top: 75%;
+    left: 36%;
+    z-index: 99;
+}
+
+.aMask4 {
+    position: absolute;
+    width: 6%;
+    height: 10%;
+    display: block;
+    background: rgba(0, 0, 0, .3);
+    border-radius: 50%;
+    top: 69%;
+    left: 53%;
+    z-index: 99;
+}
+
+.aMask5 {
+    position: absolute;
+    width: 14%;
+    height: 16%;
+    display: block;
+    background: rgba(0, 0, 0, .3);
+    border-radius: 30%;
+    top: 52%;
+    right: 15%;
+    z-index: 99;
+}
+
+.aMask6 {
+    position: absolute;
+    width: 10%;
+    height: 6%;
+    display: block;
+    background: rgba(0, 0, 0, .3);
+    border-radius: 30%;
+    top: 72%;
+    right: 0%;
+    z-index: 99;
+}
+
+.aMask7 {
+    position: absolute;
+    width: 10%;
+    height: 8%;
+    display: block;
+    background: rgba(0, 0, 0, .3);
+    border-radius: 30%;
+    bottom: 7%;
+    right: 7%;
+    z-index: 99;
+}
+
+.ani01 {
+    width: 10%;
+    position: absolute;
+    left: 5%;
+    bottom: 13%;
+    z-index: 6;
+}
+
+.ani02 {
+    width: 20%;
+    position: absolute;
+    top: 58%;
+    left: 13%;
+    z-index: 4;
+}
+
+.ani03 {
+    width: 8%;
+    position: absolute;
+    bottom: 11%;
+    left: 33%;
+    z-index: 5;
+}
+
+.ani04 {
+    width: 22%;
+    position: absolute;
+    bottom: 7%;
+    left: 54%;
+    z-index: 5;
+}
+
+.ani05 {
+    width: 25%;
+    position: absolute;
+    top: 26%;
+    left: 61%;
+    z-index: 4;
+}
+
+.ani06 {
+    width: 18%;
+    position: absolute;
+    top: 67%;
+    right: 0%;
+    z-index: 5;
+}
+
+.ani07 {
+    width: 18%;
+    position: absolute;
+    bottom: 1%;
+    right: 3%;
+    z-index: 6;
+}
+
+.ani01 img,
+.ani02 img,
+.ani03 img,
+.ani04 img,
+.ani05 img,
+.ani06 img,
+.ani07 img {
+    width: 100%;
+}
+
+.zindex-2 {
+    z-index: 2;
+}
+
+.zindex-3 {
+    z-index: 3;
+}
+
+.zindex-4 {
+    z-index: 4;
+}
+
+.zindex-5 {
+    z-index: 5;
+}
+
+.zindex-6 {
+    z-index: 6;
+}
+
+.zindex-7 {
+    z-index: 99;
+}
+
+.zindex-9 {
+    z-index: 9999;
+}
+
+@media (max-width: 990px) and (-webkit-min-device-pixel-ratio: 2) {
+    .gameContent {
+        width: 100%;
+        height: 100%;
+        padding: 3% 5%;
+        margin: 0 auto;
+    }
+    .gStart {
+        width: 100%;
+        height: 75%;
+        display: block;
+        margin-top: 7%;
+        background-image: url(../img/gStart.png);
+        background-size: 75%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .gTitle img {
+        width: 80%;
+    }
+    .gQuest img,
+    .gQuest2 img {
+        width: 80%;
+    }
+    .gFlex {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 15px 0 0 0;
+    }
+    .gItemimg img,
+    .gItemimg2 img {
+        width: 70%;
+    }
+    .game3h3 {
+        font-size: 1.4rem;
+        color: #fff;
+        padding: .3rem 2rem;
+        line-height: 2rem;
+    }
+    .gTxt {
+        font-size: 1.1rem;
+        text-indent: 2.2rem;
+        font-weight: bold;
+        padding: 1rem 1rem;
+        line-height: 1.6rem;
+        margin-bottom: 0rem;
+    }
+    .game3h3 span {
+        background: #000;
+        padding: 2px 25px 5px 25px;
+        border-radius: 20px;
+    }
+    
+    .gTxt2 {
+        font-size: 1.2rem;
+        text-indent: 2.2rem;
+        font-weight: bold;
+        padding: 0rem 2.5rem 0rem 4rem;
+        line-height: 1.4rem;
+        margin-bottom: 0rem;
+    }
+    .gTxt3 {
+        font-size: 1.6rem;
+        text-indent: 3.2rem;
+        font-weight: bold;
+        padding: 1rem 2.5rem 1rem 4rem;
+        line-height: 2.8rem;
+        margin-bottom: 0rem;
+    }
+    .gItem p,
+    .gItem2 p {
+        font-size: .8rem;
+        line-height: 1.6rem;
+        background: #000;
+        color: #fff;
+        border-radius: 12px;
+        margin: 0 5px 5px 5px;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {}
+
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {}
+
+
+/* ----------- iPad Pro 10.5" ----------- */
+
+@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {}
+
+@media (max-width: 900px) and (orientation: landscape) {}
+
+@media (max-width: 900px) and (orientation: portrait) {}
+
+
+/* ----------- iPad Pro 12.9" ----------- */
+
+@media (min-width: 990px) and (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 2) {
+    .gameContent {
+        width: 100%;
+        height: 100%;
+        padding: 3% 5%;
+        margin: 0 auto;
+    }
+    .gTitle img {
+        width: 80%;
+    }
+    .gQuest img,
+    .gQuest2 img {
+        width: 80%;
+    }
+    .game3h3 {
+        font-size: 2.4rem;
+        color: #fff;
+        padding: 1rem 2rem;
+        line-height: 3.6rem;
+    }
+    .gTxt {
+        font-size: 1.2rem;
+        text-indent: 2.4rem;
+        font-weight: bold;
+        padding: 1rem 1rem;
+        line-height: 2rem;
+        margin-bottom: 0rem;
+    }
+    .gTxt2 {
+        font-size: 1.6rem;
+        text-indent: 3.2rem;
+        font-weight: bold;
+        padding: 0rem 2.5rem 0rem 4rem;
+        line-height: 2.8rem;
+        margin-bottom: 0rem;
+    }
+    .gTxt3 {
+        font-size: 1.6rem;
+        text-indent: 3.2rem;
+        font-weight: bold;
+        padding: 1rem 2.5rem 1rem 4rem;
+        line-height: 2.8rem;
+        margin-bottom: 0rem;
+    }
+    .gItem p,
+    .gItem2 p {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        background: #000;
+        color: #fff;
+        border-radius: 12px;
+        margin: 0 5px 5px 5px;
+    }
+}
+
+
+/* ----------- iPhone" ----------- */
+
+@media (min-width: 990px) and (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 3) {
+    .gameContent {
+        width: 100%;
+        height: 100%;
+        padding: 3% 5%;
+        margin: 0 auto;
+    }
+    .gStart {
+        width: 100%;
+        height: 75%;
+        display: block;
+        margin-top: 7%;
+        background-image: url(../img/gStart.png);
+        background-size: 75%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .gTitle img {
+        width: 80%;
+    }
+    .gQuest img,
+    .gQuest2 img {
+        width: 80%;
+    }
+    .gFlex {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 15px 0 0 0;
+    }
+    .gItemimg img,
+    .gItemimg2 img {
+        width: 70%;
+    }
+    .game3h3 {
+        font-size: 1.6rem;
+        color: #fff;
+        padding: .5rem 2rem;
+        line-height: 3rem;
+    }
+    .gTxt {
+        font-size: 1.2rem;
+        text-indent: 2.4rem;
+        font-weight: bold;
+        padding: 1rem 1rem;
+        line-height: 2rem;
+        margin-bottom: 0rem;
+    }
+    .gTxt2 {
+        font-size: 1.2rem;
+        text-indent: 3.2rem;
+        font-weight: bold;
+        padding: 0rem 2.5rem 0rem 4rem;
+        line-height: 1.4rem;
+        margin-bottom: 0rem;
+    }
+    .gTxt3 {
+        font-size: 1.6rem;
+        text-indent: 3.2rem;
+        font-weight: bold;
+        padding: 1rem 2.5rem 1rem 4rem;
+        line-height: 2.8rem;
+        margin-bottom: 0rem;
+    }
+    .gItem p,
+    .gItem2 p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        background: #000;
+        color: #fff;
+        border-radius: 12px;
+        margin: 0 5px 5px 5px;
+    }
+}
+
+@media (max-width: 990px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+}
+
+@media (min-width: 990px) and (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 2) {
+    .gameContent {
+        width: 100%;
+        height: 100%;
+        padding: 3% 5%;
+        margin: 0 auto;
+    }
+    .gStart {
+        width: 100%;
+        height: 75%;
+        display: block;
+        margin-top: 7%;
+        background-image: url(../img/gStart.png);
+        background-size: 75%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .gTitle img {
+        width: 80%;
+    }
+    .gQuest img,
+    .gQuest2 img {
+        width: 80%;
+    }
+    .gFlex {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 15px 0 0 0;
+    }
+    .gItemimg img,
+    .gItemimg2 img {
+        width: 70%;
+    }
+    .game3h3 {
+        font-size: 1.6rem;
+        color: #fff;
+        padding: .5rem 2rem;
+        line-height: 3rem;
+    }
+    .gTxt {
+        font-size: 1.4rem;
+        text-indent: 2.4rem;
+        font-weight: bold;
+        padding: 1rem 1rem;
+        line-height: 2rem;
+        margin-bottom: 0rem;
+    }
+    .gTxt2 {
+        font-size: 1.2rem;
+        text-indent: 3.2rem;
+        font-weight: bold;
+        padding: 0rem 2.5rem 0rem 4rem;
+        line-height: 1.4rem;
+        margin-bottom: 0rem;
+    }
+    .gTxt3 {
+        font-size: 1.6rem;
+        text-indent: 3.2rem;
+        font-weight: bold;
+        padding: 1rem 2.5rem 1rem 4rem;
+        line-height: 2.8rem;
+        margin-bottom: 0rem;
+    }
+    .gItem p,
+    .gItem2 p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        background: #000;
+        color: #fff;
+        border-radius: 12px;
+        margin: 0 5px 5px 5px;
+    }
+}
+
+@media (max-width: 1200px) and (orientation: portrait) {}
+
+@media all and (min-width: 1201px) {
+    .gameContent {
+        width: 100%;
+        height: 100%;
+        padding: 3% 5%;
+        margin: 0 auto;
+    }
+    .gItem p,
+    .gItem2 p {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        background: #000;
+        color: #fff;
+        border-radius: 12px;
+        margin: 0 5px 5px 5px;
+    }
+    .gTxt {
+        font-size: 1.6rem;
+        text-indent: 3.2rem;
+        font-weight: bold;
+        padding: 1rem 1rem;
+        line-height: 2.4rem;
+        margin-bottom: 0rem;
+    }
+}
