@@ -31,8 +31,8 @@
         $(function () {
             var myvideo = document.getElementById("vedioplayer");
             var audio = document.getElementById("audio");
-            myvideo.play();
-            audio.play();
+            //myvideo.play();
+            //audio.play();
 
             $('#vedioplayer').click(function () {
                 location.href = 'index.html';
@@ -43,10 +43,10 @@
 
 <body>
     <!--<div id="preloader"></div>-->
-    <audio id="audio" src="audio/complete.mp3" preload="auto"></audio>
+    <audio id="audio" src="audio/complete.mp3" autoplay preload="auto"></audio>
     <main class="home box3">
         <div id="content" class="gameok">
-            <video id="vedioplayer" preload="auto" class="gamemv">
+            <video id="vedioplayer" preload="auto" autoplay class="gamemv">
                 <source src="mv/Final_vid.mp4" type="video/mp4" />
             </video>
             <div class="gInfo2">
