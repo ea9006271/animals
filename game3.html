@@ -53,19 +53,21 @@
                 let item = $('.gAns img')[num];
                 let title = $('.gItem2 p')[num];
                 if (num != 3) {
-                    audioCorrect.volume = 0.1;
-                    audioCorrect.play();
-                    $('#box1').hide();
-                    $('#titleDisplay').text(titleQuestion[num]);
-                    $('#imgDisplay').attr('src', imgQuestion[num]);
-                    $('#txtDisplay').text(txtQuestion[num]);
-                    $('#box2').show();
-                    $(item).attr('src', 'img/gAnso.png');
-                    $(item).show();
-                    $(title).show();
-                    count++;
-                    if (count >= 3) {
-                        setTimeout("location.href = 'game3ok.html'", 3000);
+                    if ($(title).css('display') == 'none') {
+                        audioCorrect.volume = 0.1;
+                        audioCorrect.play();
+                        $('#box1').hide();
+                        $('#titleDisplay').text(titleQuestion[num]);
+                        $('#imgDisplay').attr('src', imgQuestion[num]);
+                        $('#txtDisplay').text(txtQuestion[num]);
+                        $('#box2').show();
+                        $(item).attr('src', 'img/gAnso.png');
+                        $(item).show();
+                        $(title).show();
+                        count++;
+                        if (count >= 3) {
+                            setTimeout("location.href = 'game3ok.html'", 3000);
+                        }
                     }
                 }
                 else {
@@ -88,11 +90,11 @@
 
 <body>
     <div id="preloader"></div>
-    <audio id="audioCorrect">
-        <source src="audio/correct.mp3" type="audio/mpeg" />
+    <audio id="audioCorrect" preload="auto">
+        <source src="audio/correct.mp3" type="audio/mpeg">
     </audio>
-    <audio id="audioWrong">
-        <source src="audio/wrong.mp3" type="audio/mpeg" />
+    <audio id="audioWrong" preload="auto">
+        <source src="audio/wrong.mp3" type="audio/mpeg">
     </audio>
     <main class="home box2">
         <div id="content" class="game3">

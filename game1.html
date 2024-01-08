@@ -60,10 +60,12 @@
                     $(item).attr('src', 'img/gAnso.png');
                     $(item).show();
                     $(title).show();
-                    setTimeout("randomPic()", 2000);
-                    setTimeout("clearPic()", 2000);
                     if (count >= 3) {
                         setTimeout("location.href = 'game1ok.html'", 2000);
+                    }
+                    else {
+                        setTimeout("randomPic()", 2000);
+                        setTimeout("clearPic()", 2000);
                     }
                 }
                 else {
@@ -116,13 +118,13 @@
 <body>
     <div id="preloader"></div>
     <audio id="audioCorrect">
-        <source src="audio/correct.mp3" type="audio/mpeg" />
+        <source src="audio/correct.mp3" type="audio/mpeg">
     </audio>
     <audio id="audioWrong">
-        <source src="audio/wrong.mp3" type="audio/mpeg" />
+        <source src="audio/wrong.mp3" type="audio/mpeg">
     </audio>
     <audio id="audioSwitch">
-        <source src="audio/switch.mp3" type="audio/mpeg" />
+        <source src="audio/switch.mp3" type="audio/mpeg">
     </audio>
     <main class="home box">
         <div id="content" class="game1">
