@@ -14,7 +14,7 @@ body {
 .box {
     width: 100vw;
     height: 100vh;
-    background: #62d0fe;
+    background: #C2D88B;
     height: calc(var(--vh, 1vh) * 100);
     position: relative;
     display: inline-block;
@@ -607,11 +607,11 @@ body {
     z-index: 9999;
 }
 
-@media (max-width: 990px) and (-webkit-min-device-pixel-ratio: 2) {
+@media (min-width: 768px) and (max-width: 990px) {
     .gameContent {
         width: 100%;
         height: 100%;
-        padding: 3% 5%;
+        padding: 2% 5%;
         margin: 0 auto;
     }
     .gStart {
@@ -688,28 +688,12 @@ body {
     }
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {}
 
-
-/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {}
-
-
-/* ----------- iPad Pro 10.5" ----------- */
-
-@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {}
-
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {}
-
-@media (max-width: 900px) and (orientation: landscape) {}
-
-@media (max-width: 900px) and (orientation: portrait) {}
 
 
 /* ----------- iPad Pro 12.9" ----------- */
 
-@media (min-width: 990px) and (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 2) {
+@media (min-width: 991px) and (max-width: 1200px) {
     .gameContent {
         width: 100%;
         height: 100%;
@@ -765,162 +749,7 @@ body {
 }
 
 
-/* ----------- iPhone" ----------- */
 
-@media (min-width: 990px) and (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 3) {
-    .gameContent {
-        width: 100%;
-        height: 100%;
-        padding: 3% 5%;
-        margin: 0 auto;
-    }
-    .gStart {
-        width: 100%;
-        height: 75%;
-        display: block;
-        margin-top: 7%;
-        background-image: url(../img/gStart.png);
-        background-size: 75%;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .gTitle img {
-        width: 80%;
-    }
-    .gQuest img,
-    .gQuest2 img {
-        width: 80%;
-    }
-    .gFlex {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 15px 0 0 0;
-    }
-    .gItemimg img,
-    .gItemimg2 img {
-        width: 70%;
-    }
-    .game3h3 {
-        font-size: 1.6rem;
-        color: #fff;
-        padding: .5rem 2rem;
-        line-height: 3rem;
-    }
-    .gTxt {
-        font-size: 1.2rem;
-        text-indent: 2.4rem;
-        font-weight: bold;
-        padding: 1rem 1rem;
-        line-height: 2rem;
-        margin-bottom: 0rem;
-    }
-    .gTxt2 {
-        font-size: 1.2rem;
-        text-indent: 3.2rem;
-        font-weight: bold;
-        padding: 0rem 2.5rem 0rem 4rem;
-        line-height: 1.4rem;
-        margin-bottom: 0rem;
-    }
-    .gTxt3 {
-        font-size: 1.6rem;
-        text-indent: 3.2rem;
-        font-weight: bold;
-        padding: 1rem 2.5rem 1rem 4rem;
-        line-height: 2.8rem;
-        margin-bottom: 0rem;
-    }
-    .gItem p,
-    .gItem2 p {
-        font-size: 1rem;
-        line-height: 1.6rem;
-        background: #000;
-        color: #fff;
-        border-radius: 12px;
-        margin: 0 5px 5px 5px;
-    }
-}
-
-@media (max-width: 990px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-}
-
-@media (min-width: 990px) and (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 2) {
-    .gameContent {
-        width: 100%;
-        height: 100%;
-        padding: 3% 5%;
-        margin: 0 auto;
-    }
-    .gStart {
-        width: 100%;
-        height: 75%;
-        display: block;
-        margin-top: 7%;
-        background-image: url(../img/gStart.png);
-        background-size: 75%;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .gTitle img {
-        width: 80%;
-    }
-    .gQuest img,
-    .gQuest2 img {
-        width: 80%;
-    }
-    .gFlex {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 15px 0 0 0;
-    }
-    .gItemimg img,
-    .gItemimg2 img {
-        width: 70%;
-    }
-    .game3h3 {
-        font-size: 1.6rem;
-        color: #fff;
-        padding: .5rem 2rem;
-        line-height: 3rem;
-    }
-    .gTxt {
-        font-size: 1.4rem;
-        text-indent: 2.4rem;
-        font-weight: bold;
-        padding: 1rem 1rem;
-        line-height: 2rem;
-        margin-bottom: 0rem;
-    }
-    .gTxt2 {
-        font-size: 1.2rem;
-        text-indent: 3.2rem;
-        font-weight: bold;
-        padding: 0rem 2.5rem 0rem 4rem;
-        line-height: 1.4rem;
-        margin-bottom: 0rem;
-    }
-    .gTxt3 {
-        font-size: 1.6rem;
-        text-indent: 3.2rem;
-        font-weight: bold;
-        padding: 1rem 2.5rem 1rem 4rem;
-        line-height: 2.8rem;
-        margin-bottom: 0rem;
-    }
-    .gItem p,
-    .gItem2 p {
-        font-size: 1rem;
-        line-height: 1.6rem;
-        background: #000;
-        color: #fff;
-        border-radius: 12px;
-        margin: 0 5px 5px 5px;
-    }
-}
-
-@media (max-width: 1200px) and (orientation: portrait) {}
 
 @media all and (min-width: 1201px) {
     .gameContent {
