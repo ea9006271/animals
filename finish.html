@@ -29,6 +29,11 @@
     <script type="text/javascript" src="js/pagefunc.js"></script>
     <script>
         $(function () {
+            var myvideo = document.getElementById("vedioplayer");
+            var audio = document.getElementById("audio");
+            myvideo.play();
+            audio.play();
+
             $('#linkFB').click(function () {
 
             });
@@ -38,9 +43,12 @@
 
 <body>
     <!--<div id="preloader"></div>-->
-    <audio id="audio" src="audio/complete.mp3" volume="0.1" autoplay preload="auto"></audio>
+    <audio id="audio" src="audio/complete.mp3" preload="auto"></audio>
     <main class="home box3">
         <div id="content" class="gameok">
+            <video id="vedioplayer" preload="auto" class="gamemv">
+                <source src="mv/Final_vid.mp4" type="video/mp4" />
+            </video>
             <div class="gInfo2">
                 <a href="index.html" id="linkFB"><img src="img/fblink.png" alt=""></a>
             </div>

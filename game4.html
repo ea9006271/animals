@@ -1,70 +1,82 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <title>臺灣史前動物特展</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap4-modal-fullscreen.css" />
     <link rel="stylesheet" href="css/style.css" />
     <style>
-      #preloader {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 100;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(255, 255, 255, 0.8);
-        background-image: url("img/MnyxU.gif");
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      .aMask1,
-      .aMask2,
-      .aMask3,
-      .aMask4,
-      .aMask5,
-      .aMask6,
-      .aMask7 {
-        animation: shake 2.5s;
-        animation-iteration-count: infinite;
-      }
-      @keyframes shake {
-        0% {
-          transform: translate(1px, 1px) rotate(0deg);
+        #preloader {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.8);
+            background-image: url("img/MnyxU.gif");
+            background-repeat: no-repeat;
+            background-position: center;
         }
-        10% {
-          transform: translate(-1px, -2px) rotate(-1deg);
+
+        .aMask1,
+        .aMask2,
+        .aMask3,
+        .aMask4,
+        .aMask5,
+        .aMask6,
+        .aMask7 {
+            animation: shake 2.5s;
+            animation-iteration-count: infinite;
         }
-        20% {
-          transform: translate(-3px, 0px) rotate(1deg);
+
+        @keyframes shake {
+            0% {
+                transform: translate(1px, 1px) rotate(0deg);
+            }
+
+            10% {
+                transform: translate(-1px, -2px) rotate(-1deg);
+            }
+
+            20% {
+                transform: translate(-3px, 0px) rotate(1deg);
+            }
+
+            30% {
+                transform: translate(3px, 2px) rotate(0deg);
+            }
+
+            40% {
+                transform: translate(1px, -1px) rotate(1deg);
+            }
+
+            50% {
+                transform: translate(-1px, 2px) rotate(-1deg);
+            }
+
+            60% {
+                transform: translate(-3px, 1px) rotate(0deg);
+            }
+
+            70% {
+                transform: translate(3px, 1px) rotate(-1deg);
+            }
+
+            80% {
+                transform: translate(-1px, -1px) rotate(1deg);
+            }
+
+            90% {
+                transform: translate(1px, 2px) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(1px, -2px) rotate(-1deg);
+            }
         }
-        30% {
-          transform: translate(3px, 2px) rotate(0deg);
-        }
-        40% {
-          transform: translate(1px, -1px) rotate(1deg);
-        }
-        50% {
-          transform: translate(-1px, 2px) rotate(-1deg);
-        }
-        60% {
-          transform: translate(-3px, 1px) rotate(0deg);
-        }
-        70% {
-          transform: translate(3px, 1px) rotate(-1deg);
-        }
-        80% {
-          transform: translate(-1px, -1px) rotate(1deg);
-        }
-        90% {
-          transform: translate(1px, 2px) rotate(0deg);
-        }
-        100% {
-          transform: translate(1px, -2px) rotate(-1deg);
-        }
-      }
     </style>
     <script src="js/jquery-3.6.1.slim.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
@@ -72,165 +84,182 @@
     <script type="text/javascript" src="js/pagefunc.js"></script>
 
     <script>
-      $(function () {
-        var count = 0;
-        var loader = document.getElementById("preloader");
+        var myvideo;
+        var audioPass;
+        $(function () {
+            var count = 0;
+            var loader = document.getElementById("preloader");
 
-        window.addEventListener("load", function () {
-          setTimeout(function () {
-            loader.style.display = "none";
-          }, 1500);
+            window.addEventListener("load", function () {
+                setTimeout(function () {
+                    loader.style.display = "none";
+                }, 1500);
+            });
+            setTimeout("$('.gameContent').hide()", 10000);
+            var audioCorrect = document.getElementById("audioCorrect");
+            myvideo = document.getElementById("vedioplayer");
+            audioPass = document.getElementById("audioPass");
+            vedioplayer.addEventListener(
+                "ended",
+                function () {
+                    location.href = "finish.html";
+                },
+                false
+            );
+
+            $(".aMask1").click(function () {
+                audioCorrect.volume = 0.1;
+                audioCorrect.play();
+                $(this).hide();
+                $(".ani01").show();
+                findOne();
+            });
+            $(".aMask2").click(function () {
+                audioCorrect.volume = 0.1;
+                audioCorrect.play();
+                $(this).hide();
+                $(".ani02").show();
+                findOne();
+            });
+            $(".aMask3").click(function () {
+                audioCorrect.volume = 0.1;
+                audioCorrect.play();
+                $(this).hide();
+                $(".ani03").show();
+                findOne();
+            });
+            $(".aMask4").click(function () {
+                audioCorrect.volume = 0.1;
+                audioCorrect.play();
+                $(this).hide();
+                $(".ani04").show();
+                findOne();
+            });
+            $(".aMask5").click(function () {
+                audioCorrect.volume = 0.1;
+                audioCorrect.play();
+                $(this).hide();
+                $(".ani05").show();
+                findOne();
+            });
+            $(".aMask6").click(function () {
+                audioCorrect.volume = 0.1;
+                audioCorrect.play();
+                $(this).hide();
+                $(".ani06").show();
+                findOne();
+            });
+            $(".aMask7").click(function () {
+                audioCorrect.volume = 0.1;
+                audioCorrect.play();
+                $(this).hide();
+                $(".ani07").show();
+                findOne();
+            });
+            function findOne() {
+                count++;
+                if (count >= 5) {
+                    //setTimeout("location.href = 'game4ok.html'", 2000);
+                    setTimeout("playVideo()", 2000);
+                }
+            }
         });
-        setTimeout("$('.gameContent').hide()", 3000);
-        var audioCorrect = document.getElementById("audioCorrect");
-        $(".aMask1").click(function () {
-          audioCorrect.volume = 0.1;
-          audioCorrect.play();
-          $(this).hide();
-          $(".ani01").show();
-          findOne();
-        });
-        $(".aMask2").click(function () {
-          audioCorrect.volume = 0.1;
-          audioCorrect.play();
-          $(this).hide();
-          $(".ani02").show();
-          findOne();
-        });
-        $(".aMask3").click(function () {
-          audioCorrect.volume = 0.1;
-          audioCorrect.play();
-          $(this).hide();
-          $(".ani03").show();
-          findOne();
-        });
-        $(".aMask4").click(function () {
-          audioCorrect.volume = 0.1;
-          audioCorrect.play();
-          $(this).hide();
-          $(".ani04").show();
-          findOne();
-        });
-        $(".aMask5").click(function () {
-          audioCorrect.volume = 0.1;
-          audioCorrect.play();
-          $(this).hide();
-          $(".ani05").show();
-          findOne();
-        });
-        $(".aMask6").click(function () {
-          audioCorrect.volume = 0.1;
-          audioCorrect.play();
-          $(this).hide();
-          $(".ani06").show();
-          findOne();
-        });
-        $(".aMask7").click(function () {
-          audioCorrect.volume = 0.1;
-          audioCorrect.play();
-          $(this).hide();
-          $(".ani07").show();
-          findOne();
-        });
-        function findOne() {
-          count++;
-          if (count >= 5) {
-            setTimeout("location.href = 'game4ok.html'", 2000);
-          }
+        function playVideo() {
+            audioPass.play();
+            $('#vedioplayer').show();
+            myvideo.play();
         }
-      });
     </script>
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="preloader"></div>
     <audio id="audioCorrect" preload="auto">
-      <source src="audio/found.mp3" type="audio/mpeg" />
+        <source src="audio/found.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="audioPass">
+        <source src="audio/pass.mp3" type="audio/mpeg" />
     </audio>
     <main class="home box2">
-      <div id="content" class="game4">
-        <video autoplay class="gamemv">
-          <source src="mv/Final_vid.mp4" type="video/mp4" />
-        </video>
-        <div class="gInfo">
-          <a href="#" data-bs-toggle="modal" data-bs-target="#hamMenu"
-            ><img src="img/info.png" alt=""
-          /></a>
-        </div>
-        <div class="gameContent">
-          <div class="gTitle"><img src="img/gTitle04.png" alt="" /></div>
-          <div class="row gMain">
-            <div class="col-12">
-              <p class="gTxt3">
-                臺灣這美麗的島嶼，就像一座大型的自然生態動物園，森林中躲藏著許多小動物(森林裡藏著七種臺灣史前動物，包含:野豬、山羌、梅花鹿、麝香貓、白鼻心、野兔、石虎。
-                )，一起尋找牠們的蹤跡吧!
-              </p>
+        <div id="content" class="game4">
+            <video id="vedioplayer" preload="auto" class="gamemv" style="display:none;">
+                <source src="mv/4vid.mp4" type="video/mp4" />
+            </video>
+            <div class="gInfo">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#hamMenu">
+                    <img src="img/info.png" alt="" />
+                </a>
             </div>
-          </div>
-        </div>
-        <div class="aMask1"></div>
-        <div class="aMask2"></div>
-        <div class="aMask3"></div>
-        <div class="aMask4"></div>
-        <div class="aMask5"></div>
-        <div class="aMask6"></div>
-        <div class="aMask7"></div>
+            <div class="gameContent">
+                <div class="gTitle"><img src="img/gTitle04.png" alt="" /></div>
+                <div class="row gMain">
+                    <div class="col-12">
+                        <p class="gTxt3">
+                            臺灣這美麗的島嶼，就像一座大型的自然生態動物園，森林中躲藏著許多小動物(森林裡藏著七種臺灣史前動物，包含:野豬、山羌、梅花鹿、麝香貓、白鼻心、野兔、石虎。
+                            )，一起尋找牠們的蹤跡吧!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="aMask1"></div>
+            <div class="aMask2"></div>
+            <div class="aMask3"></div>
+            <div class="aMask4"></div>
+            <div class="aMask5"></div>
+            <div class="aMask6"></div>
+            <div class="aMask7"></div>
 
-        <div class="ani01" style="display: none">
-          <img src="img/ani01.png" alt="" />
+            <div class="ani01" style="display: none">
+                <img src="img/ani01.png" alt="" />
+            </div>
+            <div class="ani02" style="display: none">
+                <img src="img/ani02.png" alt="display: none;" />
+            </div>
+            <div class="ani03" style="display: none">
+                <img src="img/ani03.png" alt="" />
+            </div>
+            <div class="ani04" style="display: none">
+                <img src="img/ani04.png" alt="" />
+            </div>
+            <div class="ani05" style="display: none">
+                <img src="img/ani05.png" alt="" />
+            </div>
+            <div class="ani06" style="display: none">
+                <img src="img/ani06.png" alt="" />
+            </div>
+            <div class="ani07" style="display: none">
+                <img src="img/ani07.png" alt="" />
+            </div>
         </div>
-        <div class="ani02" style="display: none">
-          <img src="img/ani02.png" alt="display: none;" />
-        </div>
-        <div class="ani03" style="display: none">
-          <img src="img/ani03.png" alt="" />
-        </div>
-        <div class="ani04" style="display: none">
-          <img src="img/ani04.png" alt="" />
-        </div>
-        <div class="ani05" style="display: none">
-          <img src="img/ani05.png" alt="" />
-        </div>
-        <div class="ani06" style="display: none">
-          <img src="img/ani06.png" alt="" />
-        </div>
-        <div class="ani07" style="display: none">
-          <img src="img/ani07.png" alt="" />
-        </div>
-      </div>
     </main>
 
     <!-- Modal -->
-    <div
-      class="modal fade"
-      id="hamMenu"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-scrollable" style="max-width: 70%">
-        <div class="myModal modal-content">
-          <div class="modal-header">
-            <h3>遊戲說明</h3>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body bodyinfo">
-            <div class="bodyInfo" data-mcs-theme="dark">
-              <p>
-                臺灣過去有許多動物種類雖然已經看不到了，但是考古學家及生物學家透過地層裡的化石，就可以認識這些臺灣古代先民。
-              </p>
-              <p>
-                動物們不僅提供史前人類生存的資源，也型塑了人類的精神文化，讓我們一起勇闖臺灣島，看看你對臺灣史前動物的認識有多少吧!
-              </p>
+    <div class="modal fade"
+         id="hamMenu"
+         tabindex="-1"
+         aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" style="max-width: 70%">
+            <div class="myModal modal-content">
+                <div class="modal-header">
+                    <h3>遊戲說明</h3>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body bodyinfo">
+                    <div class="bodyInfo" data-mcs-theme="dark">
+                        <p>
+                            臺灣過去有許多動物種類雖然已經看不到了，但是考古學家及生物學家透過地層裡的化石，就可以認識這些臺灣古代先民。
+                        </p>
+                        <p>
+                            動物們不僅提供史前人類生存的資源，也型塑了人類的精神文化，讓我們一起勇闖臺灣島，看看你對臺灣史前動物的認識有多少吧!
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </body>
+</body>
 </html>
