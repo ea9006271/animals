@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-
-<head>
-
+  <head>
     <meta charset="UTF-8" />
     <title>臺灣史前動物特展</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -14,185 +12,204 @@
     <link rel="preload" href="img/g1Q4.png" as="image" />
     <link rel="preload" href="img/g1Q5.png" as="image" />
     <style>
-        #preloader {
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 100;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(255, 255, 255, 0.8);
-            background-image: url("img/MnyxU.gif");
-            background-repeat: no-repeat;
-            background-position: center;
-        }
+      #preloader {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-image: url("img/MnyxU.gif");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
     </style>
     <script src="js/jquery-3.6.1.slim.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/func.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/pagefunc.js"></script>
     <script>
-        var imgAnimals = ['img/g1Q1.png', 'img/g1Q2.png', 'img/g1Q3.png', 'img/g1Q4.png', 'img/g1Q5.png'];
-        var index;//題號
-        var count = 0;//題序
-        var nums = [99, 99, 99];//存放產生的題號
+      var imgAnimals = [
+        "img/g1Q1.png",
+        "img/g1Q2.png",
+        "img/g1Q3.png",
+        "img/g1Q4.png",
+        "img/g1Q5.png",
+      ];
+      var index; //題號
+      var count = 0; //題序
+      var nums = [99, 99, 99]; //存放產生的題號
 
-        $(function () {
-            var loader = document.getElementById("preloader");
+      $(function () {
+        var loader = document.getElementById("preloader");
 
-            window.addEventListener("load", function () {
-                setTimeout(function () {
-                    loader.style.display = "none";
-                    randomPic();
-                }, 1500);
-            });
-            clearPic();
-            var audioCorrect = document.getElementById("audioCorrect");
-            var audioWrong = document.getElementById("audioWrong");
-            $('.gItem').click(function () {
-                let num = $(this).index();
-                let item = $('.gAns img')[num];
-                let title = $('.gItem p')[num];
-                if (num == index) {
-                    audioCorrect.volume = 0.1;
-                    audioCorrect.play();
-                    $(item).attr('src', 'img/gAnso.png');
-                    $(item).show();
-                    $(title).show();
-                    if (count >= 3) {
-                        setTimeout("location.href = 'game1ok.html'", 2000);
-                    }
-                    else {
-                        setTimeout("randomPic()", 2000);
-                        setTimeout("clearPic()", 2000);
-                    }
-                }
-                else {
-                    audioWrong.volume = 0.1;
-                    audioWrong.play();
-                    $(item).attr('src', 'img/gAnsx.png');
-                    $(item).show();
-                    //$(title).show();
-                }
-
-            });
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            loader.style.display = "none";
+            randomPic();
+          }, 1500);
         });
-        function clearPic() {
-            $('.gAns img').each(function () {
-                $(this).hide();
-            });
-            if (count <= 0) {
-                $('.gItem p').each(function () {
-                    $(this).hide();
-                });
+        clearPic();
+        var audioCorrect = document.getElementById("audioCorrect");
+        var audioWrong = document.getElementById("audioWrong");
+        $(".gItem").click(function () {
+          let num = $(this).index();
+          let item = $(".gAns img")[num];
+          let title = $(".gItem p")[num];
+          if (num == index) {
+            audioCorrect.volume = 0.1;
+            audioCorrect.play();
+            $(item).attr("src", "img/gAnso.png");
+            $(item).show();
+            $(title).show();
+            if (count >= 3) {
+              setTimeout("location.href = 'game1ok.html'", 2000);
+            } else {
+              setTimeout("randomPic()", 2000);
+              setTimeout("clearPic()", 2000);
             }
+          } else {
+            audioWrong.volume = 0.1;
+            audioWrong.play();
+            $(item).attr("src", "img/gAnsx.png");
+            $(item).show();
+            //$(title).show();
+          }
+        });
+      });
+      function clearPic() {
+        $(".gAns img").each(function () {
+          $(this).hide();
+        });
+        if (count <= 0) {
+          $(".gItem p").each(function () {
+            $(this).hide();
+          });
         }
-        function randomPic() {
-            var audioSwitch = document.getElementById("audioSwitch");
-            while (true) {
-                index = getRandom(0, imgAnimals.length - 1);
-                let check = true;
-                for (let i = 0; i < nums.length; i++) {
-                    if (nums[i] == index) {
-                        check = false;
-                        break;
-                    }
-                }
-                if (check) {
-                    nums[count] = index;
-                    break;
-                }
+      }
+      function randomPic() {
+        var audioSwitch = document.getElementById("audioSwitch");
+        while (true) {
+          index = getRandom(0, imgAnimals.length - 1);
+          let check = true;
+          for (let i = 0; i < nums.length; i++) {
+            if (nums[i] == index) {
+              check = false;
+              break;
             }
-            audioSwitch.volume = 0.5;
-            audioSwitch.play();
-            $('#imgDisplay').attr('src', imgAnimals[index]);
-            count++;
-            console.log(count);
+          }
+          if (check) {
+            nums[count] = index;
+            break;
+          }
         }
-
+        audioSwitch.volume = 0.5;
+        audioSwitch.play();
+        $("#imgDisplay").attr("src", imgAnimals[index]);
+        count++;
+        console.log(count);
+      }
     </script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div id="preloader"></div>
     <audio id="audioCorrect">
-        <source src="audio/correct.mp3" type="audio/mpeg">
+      <source src="audio/correct.mp3" type="audio/mpeg" />
     </audio>
     <audio id="audioWrong">
-        <source src="audio/wrong.mp3" type="audio/mpeg">
+      <source src="audio/wrong.mp3" type="audio/mpeg" />
     </audio>
     <audio id="audioSwitch">
-        <source src="audio/switch.mp3" type="audio/mpeg">
+      <source src="audio/switch.mp3" type="audio/mpeg" />
     </audio>
     <main class="home box">
-        <div id="content" class="game1">
-            <div class="gInfo">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#hamMenu"><img src="img/info.png" alt=""></a>
-            </div>
-
-            <div class="gameContent">
-                <div class="gTitle"><img src="img/gTitle01.png" alt=""></div>
-                <div class="row gMain">
-                    <div class="col-8">
-                        <p class="gTxt">寒冷的冰河時期，有一群北方動物，透過連結亞洲大陸與臺灣的「臺灣陸橋」往溫暖的南方遷徙，從遺骨化石的發現，了解動物曾經在臺灣生活的軌跡。考古探險家!為動物們找到屬於牠的的化石吧!</p>
-                    </div>
-                    <div class="col-4 gQuest">
-                        <img id="imgDisplay" src="img/g1Q5.png" alt="">
-                    </div>
-                </div>
-                <div class="gFlex">
-                    <div class="gItem">
-                        <div class="gAns"><img src="img/gAnso.png" alt=""></div>
-                        <div class="gItemimg"><img src="img/g1Ans1.png" alt=""></div>
-                        <p>古菱齒象右下顎骨</p>
-                    </div>
-                    <div class="gItem">
-                        <div class="gAns"><img src="img/gAnsx.png" alt=""></div>
-                        <div class="gItemimg"><img src="img/g1Ans2.png" alt=""></div>
-                        <p>野豬頭骨</p>
-                    </div>
-                    <div class="gItem">
-                        <div class="gAns"><img src="img/gAnsx.png" alt=""></div>
-                        <div class="gItemimg"><img src="img/g1Ans3.png" alt=""></div>
-                        <p>馬掌骨</p>
-                    </div>
-                    <div class="gItem">
-                        <div class="gAns"><img src="img/gAnsx.png" alt=""></div>
-                        <div class="gItemimg"><img src="img/g1Ans4.png" alt=""></div>
-                        <p>鹿角</p>
-                    </div>
-                    <div class="gItem">
-                        <div class="gAns"><img src="img/gAnsx.png" alt=""></div>
-                        <div class="gItemimg"><img src="img/g1Ans5.png" alt=""></div>
-                        <p>楊氏水牛脊椎</p>
-                    </div>
-                </div>
-            </div>
+      <div id="content" class="game1">
+        <video controls autoplay class="gamemv">
+          <source src="mv/1vid.mp4" type="video/mp4" />
+        </video>
+        <div class="gInfo">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#hamMenu"
+            ><img src="img/info.png" alt=""
+          /></a>
         </div>
+
+        <div class="gameContent">
+          <div class="gTitle"><img src="img/gTitle01.png" alt="" /></div>
+          <div class="row gMain">
+            <div class="col-8">
+              <p class="gTxt">
+                寒冷的冰河時期，有一群北方動物，透過連結亞洲大陸與臺灣的「臺灣陸橋」往溫暖的南方遷徙，從遺骨化石的發現，了解動物曾經在臺灣生活的軌跡。考古探險家!為動物們找到屬於牠的的化石吧!
+              </p>
+            </div>
+            <div class="col-4 gQuest">
+              <img id="imgDisplay" src="img/g1Q5.png" alt="" />
+            </div>
+          </div>
+          <div class="gFlex">
+            <div class="gItem">
+              <div class="gAns"><img src="img/gAnso.png" alt="" /></div>
+              <div class="gItemimg"><img src="img/g1Ans1.png" alt="" /></div>
+              <p>古菱齒象右下顎骨</p>
+            </div>
+            <div class="gItem">
+              <div class="gAns"><img src="img/gAnsx.png" alt="" /></div>
+              <div class="gItemimg"><img src="img/g1Ans2.png" alt="" /></div>
+              <p>野豬頭骨</p>
+            </div>
+            <div class="gItem">
+              <div class="gAns"><img src="img/gAnsx.png" alt="" /></div>
+              <div class="gItemimg"><img src="img/g1Ans3.png" alt="" /></div>
+              <p>馬掌骨</p>
+            </div>
+            <div class="gItem">
+              <div class="gAns"><img src="img/gAnsx.png" alt="" /></div>
+              <div class="gItemimg"><img src="img/g1Ans4.png" alt="" /></div>
+              <p>鹿角</p>
+            </div>
+            <div class="gItem">
+              <div class="gAns"><img src="img/gAnsx.png" alt="" /></div>
+              <div class="gItemimg"><img src="img/g1Ans5.png" alt="" /></div>
+              <p>楊氏水牛脊椎</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Modal -->
-    <div class="modal fade" id="hamMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" style="max-width: 70%">
-            <div class="myModal modal-content">
-                <div class="modal-header">
-                    <h3>遊戲說明</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body bodyinfo">
-                    <div class="bodyInfo" data-mcs-theme="dark">
-
-                        <p>臺灣過去有許多動物種類雖然已經看不到了，但是考古學家及生物學家透過地層裡的化石，就可以認識這些臺灣古代先民。</p>
-                        <p>
-                            動物們不僅提供史前人類生存的資源，也型塑了人類的精神文化，讓我們一起勇闖臺灣島，看看你對臺灣史前動物的認識有多少吧!
-                        </p>
-                    </div>
-                </div>
+    <div
+      class="modal fade"
+      id="hamMenu"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-scrollable" style="max-width: 70%">
+        <div class="myModal modal-content">
+          <div class="modal-header">
+            <h3>遊戲說明</h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body bodyinfo">
+            <div class="bodyInfo" data-mcs-theme="dark">
+              <p>
+                臺灣過去有許多動物種類雖然已經看不到了，但是考古學家及生物學家透過地層裡的化石，就可以認識這些臺灣古代先民。
+              </p>
+              <p>
+                動物們不僅提供史前人類生存的資源，也型塑了人類的精神文化，讓我們一起勇闖臺灣島，看看你對臺灣史前動物的認識有多少吧!
+              </p>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
