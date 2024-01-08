@@ -648,8 +648,8 @@ body {
         line-height: 2rem;
     }
     .gTxt {
-        font-size: 1.1rem;
-        text-indent: 2.2rem;
+        font-size: 1.2rem;
+        text-indent: 2.4rem;
         font-weight: bold;
         padding: 1rem 1rem;
         line-height: 1.6rem;
@@ -670,8 +670,8 @@ body {
         margin-bottom: 0rem;
     }
     .gTxt3 {
-        font-size: 1.6rem;
-        text-indent: 3.2rem;
+        font-size: 1.2rem;
+        text-indent: 2.4rem;
         font-weight: bold;
         padding: 1rem 2.5rem 1rem 4rem;
         line-height: 2.8rem;
