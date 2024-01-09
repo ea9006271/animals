@@ -91,7 +91,20 @@
             );
         });
         function playVideo() {
-            audioPass.play();
+            //audioPass.play();
+            var frame = window.parent.frames[1];
+            if (frame !== undefined) {
+                try {
+                    var audio = frame.document.getElementById("audioShooter");
+                    if (audio !== null) {
+                        audio.src = "audio/pass.mp3";
+                        //audio.volume = 0.05;
+                        audio.play();
+                    }
+                } catch (e) {
+                    console.log(e);
+                }
+            }
             $('#vedioplayer').show();
             myvideo.play();
         }
@@ -149,11 +162,11 @@
             <video id="vedioplayer" preload="auto" muted class="gamemv" style="display:none;">
                 <source src="mv/1vid.mp4" type="video/mp4" />
             </video>
-            <div class="gInfo">
+            <!--<div class="gInfo">
                 <a href="#" data-bs-toggle="modal" data-bs-target="#hamMenu">
                     <img src="img/info.png" alt="" />
                 </a>
-            </div>
+            </div>-->
 
             <div class="gameContent">
                 <div class="gTitle"><img src="img/gTitle01.png" alt="" /></div>
