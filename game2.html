@@ -90,7 +90,20 @@
             );
         });
         function playVideo() {
-            audioPass.play();
+            //audioPass.play();
+            var frame = window.parent.frames[1];
+            if (frame !== undefined) {
+                try {
+                    var audio = frame.document.getElementById("audioShooter");
+                    if (audio !== null) {
+                        audio.src = "audio/pass.mp3";
+                        //audio.volume = 0.05;
+                        audio.play();
+                    }
+                } catch (e) {
+                    console.log(e);
+                }
+            }
             $('#vedioplayer').show();
             myvideo.play();
         }
@@ -139,9 +152,9 @@
     <audio id="audioSwitch" preload="auto">
         <source src="audio/switch.mp3" type="audio/mpeg" />
     </audio>
-    <audio id="audioPass">
+    <!--<audio id="audioPass">
         <source src="audio/pass.mp3" type="audio/mpeg" />
-    </audio>
+    </audio>-->
     <main class="home box2">
         <div id="content" class="game2">
             <video id="vedioplayer" preload="auto" muted class="gamemv" style="display:none;">
