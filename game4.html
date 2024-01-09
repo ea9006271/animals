@@ -85,6 +85,7 @@
 
     <script>
         var myvideo;
+        var videoFinish;
         var audioPass;
         $(function () {
             var count = 0;
@@ -98,11 +99,28 @@
             setTimeout("$('.gameContent').hide()", 10000);
             var audioCorrect = document.getElementById("audioCorrect");
             myvideo = document.getElementById("vedioplayer");
+            videoFinish = document.getElementById("vedioFinish");
             audioPass = document.getElementById("audioPass");
             vedioplayer.addEventListener(
                 "ended",
                 function () {
-                    location.href = "finish.html";
+                    //location.href = "finish.html";
+                    var frame = window.parent.frames[1];
+                    if (frame !== undefined) {
+                        try {
+                            var audio = frame.document.getElementById("audioShooter");
+                            if (audio !== null) {
+                                audio.src = "audio/complete.mp3";
+                                //audio.volume = 0.05;
+                                audio.play();
+                            }
+                        } catch (e) {
+                            console.log(e);
+                        }
+                    }
+                    $('#vedioplayer').hide();
+                    $('#vedioFinish').show();
+                    videoFinish.play();
                 },
                 false
             );
@@ -163,6 +181,9 @@
                     setTimeout("playVideo()", 2000);
                 }
             }
+            $('#vedioFinish').click(function () {
+                location.href = 'index.html';
+            });
         });
         function playVideo() {
             //audioPass.play();
@@ -198,11 +219,14 @@
             <video id="vedioplayer" preload="auto" muted class="gamemv" style="display:none;">
                 <source src="mv/4vid.mp4" type="video/mp4" />
             </video>
+            <video id="vedioFinish" preload="auto" muted class="gamemv" style="display:none;">
+                <source src="mv/Final_vid.mp4" type="video/mp4" />
+            </video>
             <!--<div class="gInfo">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#hamMenu">
-                    <img src="img/info.png" alt="" />
-                </a>
-            </div>-->
+        <a href="#" data-bs-toggle="modal" data-bs-target="#hamMenu">
+            <img src="img/info.png" alt="" />
+        </a>
+    </div>-->
             <div class="gameContent">
                 <div class="gTitle"><img src="img/gTitle04.png" alt="" /></div>
                 <div class="row gMain">
