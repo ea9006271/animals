@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8" />
     <title>臺灣史前動物特展</title>
@@ -40,19 +41,19 @@
         var myvideo;
         var audioPass;
 
-        $(function () {
+        $(function() {
             var count = 0;
             var loader = document.getElementById("preloader");
 
-            window.addEventListener("load", function () {
-                setTimeout(function () {
+            window.addEventListener("load", function() {
+                setTimeout(function() {
                     loader.style.display = "none";
                 }, 1500);
             });
             clearPic();
             var audioCorrect = document.getElementById("audioCorrect");
             var audioWrong = document.getElementById("audioWrong");
-            $(".gItem2").click(function () {
+            $(".gItem2").click(function() {
                 let num = $(this).index();
                 let item = $(".gAns img")[num];
                 let title = $(".gItem2 p")[num];
@@ -86,19 +87,21 @@
             audioPass = document.getElementById("audioPass");
             vedioplayer.addEventListener(
                 "ended",
-                function () {
+                function() {
                     location.href = "game4.html";
                 },
                 false
             );
         });
+
         function playVideo() {
             audioPass.play();
             $('#vedioplayer').show();
             myvideo.play();
         }
+
         function clearPic() {
-            $(".gAns img, .gItem2 p").each(function () {
+            $(".gAns img, .gItem2 p").each(function() {
                 $(this).hide();
             });
         }
@@ -118,7 +121,7 @@
     </audio>
     <main class="home box2">
         <div id="content" class="game3">
-            <video id="vedioplayer" preload="auto" class="gamemv" style="display:none;">
+            <video id="vedioplayer" preload="auto" muted class="gamemv" style="display:none;">
                 <source src="mv/3vid.mp4" type="video/mp4" />
             </video>
             <div class="gInfo">
@@ -129,7 +132,7 @@
 
             <div class="gameContent">
                 <div class="gTitle"><img src="img/gTitle03.png" alt="" /></div>
-                <div class="row gMain2" id="box1" style="height: 30%">
+                <div class="row gMain2" id="box1">
                     <div class="col-12">
                         <p class="gTxt3">
                             想在大自然生存不是件容易的事，人類透過獵捕動物獲得主要的食物來源，除此之外，動物的全身都富有經濟價值。請選出動物身上來還有哪些部分可再利用喔!
@@ -174,19 +177,12 @@
     </main>
 
     <!-- Modal -->
-    <div class="modal fade"
-         id="hamMenu"
-         tabindex="-1"
-         aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
+    <div class="modal fade" id="hamMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" style="max-width: 70%">
             <div class="myModal modal-content">
                 <div class="modal-header">
                     <h3>遊戲說明</h3>
-                    <button type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body bodyinfo">
                     <div class="bodyInfo" data-mcs-theme="dark">
@@ -202,4 +198,5 @@
         </div>
     </div>
 </body>
+
 </html>
