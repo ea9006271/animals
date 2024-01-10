@@ -42,7 +42,7 @@
         var count = 0; //題序
         var nums = [99, 99, 99]; //存放產生的題號
         var myvideo;
-        var audioPass;
+        //var audioPass;
         $(function () {
             var loader = document.getElementById("preloader");
 
@@ -81,7 +81,7 @@
                 }
             });
             myvideo = document.getElementById("vedioplayer");
-            audioPass = document.getElementById("audioPass");
+            //audioPass = document.getElementById("audioPass");
             vedioplayer.addEventListener(
                 "ended",
                 function () {
@@ -97,7 +97,7 @@
                 try {
                     var audio = frame.document.getElementById("audioShooter");
                     if (audio !== null) {
-                        audio.src = "audio/pass.mp3";
+                        audio.src = "audio/success.mp3";
                         //audio.volume = 0.05;
                         audio.play();
                     }

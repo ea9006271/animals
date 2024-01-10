@@ -39,7 +39,7 @@
             "人類與其他哺乳類動物相比，毛髮稀疏，因此動物的皮毛就提供了保暖所需。",
         ];
         var myvideo;
-        var audioPass;
+        //var audioPass;
 
         $(function() {
             var count = 0;
@@ -84,7 +84,7 @@
                 }
             });
             myvideo = document.getElementById("vedioplayer");
-            audioPass = document.getElementById("audioPass");
+            //audioPass = document.getElementById("audioPass");
             vedioplayer.addEventListener(
                 "ended",
                 function() {
@@ -101,7 +101,7 @@
                 try {
                     var audio = frame.document.getElementById("audioShooter");
                     if (audio !== null) {
-                        audio.src = "audio/pass.mp3";
+                        audio.src = "audio/success.mp3";
                         //audio.volume = 0.05;
                         audio.play();
                     }
