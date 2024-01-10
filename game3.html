@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     <title>臺灣史前動物特展</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap4-modal-fullscreen.css" />
@@ -41,19 +42,19 @@
         var myvideo;
         //var audioPass;
 
-        $(function() {
+        $(function () {
             var count = 0;
             var loader = document.getElementById("preloader");
 
-            window.addEventListener("load", function() {
-                setTimeout(function() {
+            window.addEventListener("load", function () {
+                setTimeout(function () {
                     loader.style.display = "none";
                 }, 1500);
             });
             clearPic();
             var audioCorrect = document.getElementById("audioCorrect");
             var audioWrong = document.getElementById("audioWrong");
-            $(".gItem2").click(function() {
+            $(".gItem2").click(function () {
                 let num = $(this).index();
                 let item = $(".gAns img")[num];
                 let title = $(".gItem2 p")[num];
@@ -87,7 +88,7 @@
             //audioPass = document.getElementById("audioPass");
             vedioplayer.addEventListener(
                 "ended",
-                function() {
+                function () {
                     location.href = "game4.html";
                 },
                 false
@@ -114,7 +115,7 @@
         }
 
         function clearPic() {
-            $(".gAns img, .gItem2 p").each(function() {
+            $(".gAns img, .gItem2 p").each(function () {
                 $(this).hide();
             });
         }
